@@ -8,11 +8,13 @@ import {NgForm, FormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { CountryWiseComponent } from './country-wise/country-wise.component';
 
 @NgModule({
    declarations: [
       AppComponent,
       NavBarComponent,
+      CountryWiseComponent
    ],
    imports: [
       BrowserModule,
