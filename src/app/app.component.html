@@ -4,28 +4,37 @@
     <span class="spinner-grow text-danger text-sm" role="status"></span>
   </h5>
   <hr />
-  <div *ngIf="cases>0 then showData else noData">
-  </div>
-  <ng-template #showData>
-    <h4>Total Cases : {{cases}}</h4>
-    <div class="">
-        <table class="table table bordered table responsive">
-          <!-- <thead>
-            <tr>
-              <th *ngFor="let keyOfStateArray of stateWiseData.keys()">
-                {{keyOfStateArray}}
-              </th>
-            </tr>
-          </thead> -->
-         <tbody>
-          <tr *ngFor="let stateData of stateWiseData">
-            <td>{{stateData?.state}}</td>
-            <td>{{stateData?.cases}}</td>
-          </tr>
-         </tbody>
-        </table>
-    </div>
-  </ng-template>
-  <ng-template #noData><h4 class="text-warning">No Data Found</h4></ng-template>
-  <app-state-district></app-state-district>
+  <div *ngIf='serverResponse==true; then showData else showError'></div>
 </div>
+<ng-template #showData>
+  <div class="card-deck text-white text-center text-uppercase" *ngFor='let data of myData'>
+    <div class="card bg-info">
+      <div class="card-body">
+        <p class="card-text">{{data?.Confirmed}}</p>
+      </div>
+      <div class="card-footer">Confirmed</div>
+    </div>
+    <div class="card bg-warning">
+      <div class="card-body">
+        <p class="card-text">{{data?.Active}}</p>
+      </div>
+      <div class="card-footer">Active</div>
+    </div>
+    <div class="card bg-success">
+      <div class="card-body">
+        <p class="card-text">{{data?.Recovered}}</p>
+      </div>
+      <div class="card-footer">Recovered</div>
+    </div>
+    <div class="card bg-secondary">
+      <div class="card-body">
+        <p class="card-text">{{data?.Deaths}}</p>
+      </div>
+      <div class="card-footer">Deceased</div>
+    </div>
+  </div>
+</ng-template>
+  <ng-template #showError>
+    Failed to load
+    <img src="data:image/png;base64,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" alt="" class="img-fluid">
+  </ng-template>
