@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit  } from '@angular/core';
 import { DataService } from '../data.service';
 
 import * as $ from 'jquery';
@@ -11,7 +11,7 @@ import * as CanvasJS from '../../assets/canvasjs.min'
 })
 export class ChartJsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service : DataService) { }
 
   ngOnInit() {
     let dataPoints = [];
@@ -66,9 +66,6 @@ export class ChartJsComponent implements OnInit {
     });
 		dpsLength = dataPoints.length;
     chart.render();
-    
   });
-  
   }
-
 }

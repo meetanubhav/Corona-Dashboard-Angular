@@ -23,7 +23,6 @@ export class CountryWiseComponent implements OnInit {
   ngOnInit() {
     this.service.getCountries()
     .subscribe( response =>{this.countrylist = response;
-      console.log(Object.keys(this.countrylist));
       });
   }
   thisCountryData(value: any){

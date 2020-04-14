@@ -21,28 +21,31 @@
 <!-- Template if data exists -->
 <ng-template #showData>
   <div class="card-deck text-white text-center text-uppercase">
-    <div class="card bg-info">
+    <div class="card bg-gradient-info">
       <div class="card-body">
         <p class="card-text">{{totalConfirm}}
         </p>
+        <small class="text-small">[ + {{dailyConfirmed}} ]</small>
       </div>
       <div class="card-footer">Confirmed</div>
     </div>
-    <div class="card bg-warning">
+    <div class="card bg-gradient-danger">
       <div class="card-body">
         <p class="card-text">{{totalActive}}</p>
       </div>
       <div class="card-footer">Active</div>
     </div>
-    <div class="card bg-success">
+    <div class="card bg-gradient-success">
       <div class="card-body">
         <p class="card-text">{{totalRecovered}}</p>
+        <small class="text-small">[ + {{dailyRecovered}} ]</small>
       </div>
       <div class="card-footer">Recovered</div>
     </div>
-    <div class="card bg-secondary">
+    <div class="card bg-gradient-secondary">
       <div class="card-body">
         <p class="card-text">{{totalDeaths}}</p>
+        <small class="text-small">[ + {{dailyDeaths}} ]</small>
       </div>
       <div class="card-footer">Deceased</div>
     </div>

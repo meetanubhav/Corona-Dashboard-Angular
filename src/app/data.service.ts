@@ -25,5 +25,6 @@ export class DataService {
     return this.http.get('https://api.covid19api.com/live/country/'+value+'/status/confirmed')
     .map((response:any) => response.json());
   }
+
   
 }

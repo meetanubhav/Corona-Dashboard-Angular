@@ -12,7 +12,7 @@
       <tr *ngFor="let sd of stateData">
         <td class="text-uppercase" *ngIf="sd.confirmed>0">{{sd.state}}</td>
         <td class="text-primary" *ngIf="sd.confirmed>0">{{sd.confirmed}}</td>
-        <td class="text-warning" *ngIf="sd.confirmed>0">{{sd.active}}</td>
+        <td class="text-danger" *ngIf="sd.confirmed>0">{{sd.active}}</td>
         <td class="text-success" *ngIf="sd.confirmed>0">{{sd.recovered}}</td>
         <td class="text-secondary" *ngIf="sd.confirmed>0">{{sd.deaths}}</td>
       </tr>
