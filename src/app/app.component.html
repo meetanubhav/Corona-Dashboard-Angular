@@ -6,34 +6,43 @@
   <hr />
   <div *ngIf='serverResponse==true; then showData else showError'></div>
   <hr />
-  <app-chart-js></app-chart-js>
 </div>
 
+  <div class="row">
+    <div class="col-md-6 col-sm-6 col-xs-6">
+      <app-chart-js></app-chart-js>
+    </div>
+    <div class="col-md-6 col-sm-6 col-xs-6">
+      <app-state-wise></app-state-wise>
+    </div>
+  </div>
+
+
+<!-- Template if data exists -->
 <ng-template #showData>
-  <div class="card-deck text-white text-center text-uppercase" *ngFor='let data of myData'>
+  <div class="card-deck text-white text-center text-uppercase">
     <div class="card bg-info">
       <div class="card-body">
-        <p class="card-text">{{data?.Confirmed}}
-          <span class="text-secondary" *ngIf="casesInc>=0;"> ( <i class="fa fa-arrow-up fa-sm"></i> {{casesInc}} )</span>
+        <p class="card-text">{{totalConfirm}}
         </p>
       </div>
       <div class="card-footer">Confirmed</div>
     </div>
     <div class="card bg-warning">
       <div class="card-body">
-        <p class="card-text">{{data?.Active}}</p>
+        <p class="card-text">{{totalActive}}</p>
       </div>
       <div class="card-footer">Active</div>
     </div>
     <div class="card bg-success">
       <div class="card-body">
-        <p class="card-text">{{data?.Recovered}}</p>
+        <p class="card-text">{{totalRecovered}}</p>
       </div>
       <div class="card-footer">Recovered</div>
     </div>
     <div class="card bg-secondary">
       <div class="card-body">
-        <p class="card-text">{{data?.Deaths}}</p>
+        <p class="card-text">{{totalDeaths}}</p>
       </div>
       <div class="card-footer">Deceased</div>
     </div>

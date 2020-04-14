@@ -14,19 +14,30 @@ export class AppComponent implements OnInit{
   myData : any[];
   graphData : any [];
   casesInc : Number;
+  totalActive : number;
+  totalConfirm : number;
+  totalRecovered : number;
+  totalDeaths : number;
   serverResponse : boolean = true;
   constructor ( private service : DataService) { }
 
   ngOnInit(){
-    this.service.getData()
-    .subscribe(response => {
-      this.myData = response.json();
-      this.myData = Array(this.myData[this.myData.length-1]);
-      this.serverResponse = true;
+    // this.service.getData()
+    // .subscribe(response => {
+    //   this.myData = response.json();
+    //   this.myData = Array(this.myData[this.myData.length-1]);
+    this.service.getStateData()
+      .subscribe(response => {
+        this.myData = response.json();
+        this.myData = this.myData["statewise"][0];
+        this.totalActive = this.myData["active"];
+        this.totalConfirm = this.myData["confirmed"];
+        this.totalRecovered = this.myData["recovered"];
+        this.totalDeaths = this.myData["deaths"];
+        this.serverResponse = true;
     }, error => {
       this.serverResponse = false;
-    })
-    
+    })    
 
     this.service.getCountryGraph()
     .subscribe(x=>{

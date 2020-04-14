@@ -1,10 +1,10 @@
 <hr />
 <div class="container mt-2">
   <div class="form-group row">
-    <div class="col-3">
+    <div class="col-md-3 col-sm-12 col-xs-12">
       <label class="text-uppercase text-center" for="countryList">See Country wise data</label>
     </div>
-    <div class="col-3">
+    <div class="col-md-3 col-sm-12 col-xs-12">
       <select class="form-control" name="countryList" id="countryList" (change)='thisCountryData($event)'>
         <option value="">-- select --</option>
         <option *ngFor="let country of countrylist" [value]="country.Country">

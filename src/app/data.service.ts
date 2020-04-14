@@ -7,6 +7,7 @@ export class DataService {
   // private url = 'https://api.data.gov.in/resource/cd08e47b-bd70-4efb-8ebc-589344934531?limit=all&api-key=579b464db66ec23bdd000001cdc3b564546246a772a26393094f5645&format=viz';
   private url = 'https://api.covid19api.com/live/country/india/status/confirmed';
   private countryList = 'https://api.covid19api.com/countries';
+  private covid19indiaorgUrl = 'https://api.covid19india.org/data.json';
 
   constructor(private http : Http) { }
 
@@ -21,6 +22,9 @@ export class DataService {
   }
   getCountryGraph(){
     return this.http.get('https://api.covid19api.com/total/dayone/country/india/status/confirmed');
+  }
+  getStateData(){
+    return this.http.get(this.covid19indiaorgUrl);
   }
 
 }

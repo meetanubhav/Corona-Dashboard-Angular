@@ -11,6 +11,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { CountryWiseComponent } from './country-wise/country-wise.component';
 import { FooterComponent } from './footer/footer.component';
 import { ChartJsComponent } from './chart-js/chart-js.component';
+import { StateWiseComponent } from './state-wise/state-wise.component';
 
 @NgModule({
    declarations: [
@@ -18,7 +19,8 @@ import { ChartJsComponent } from './chart-js/chart-js.component';
       NavBarComponent,
       CountryWiseComponent,
       FooterComponent,
-      ChartJsComponent
+      ChartJsComponent,
+      StateWiseComponent
    ],
    imports: [
       BrowserModule,
