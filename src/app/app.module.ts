@@ -29,7 +29,7 @@ import { StateWiseComponent } from './state-wise/state-wise.component';
       HttpModule
    ],
    providers: [
-      DataService
+      DataService,
    ],
    bootstrap: [
       AppComponent

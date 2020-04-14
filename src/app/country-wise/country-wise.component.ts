@@ -22,11 +22,9 @@ export class CountryWiseComponent implements OnInit {
 
   ngOnInit() {
     this.service.getCountries()
-    .subscribe( response =>
-      {
-        this.countrylist = response.json();
-      }
-    )
+    .subscribe( response =>{this.countrylist = response;
+      console.log(Object.keys(this.countrylist));
+      });
   }
   thisCountryData(value: any){
     this.countryName = value.target.value;
@@ -34,7 +32,7 @@ export class CountryWiseComponent implements OnInit {
     this.service.getSelectedCountryStats(this.countryName)
     .subscribe( response => 
       {
-        this.selectedCountryData = response.json();
+        this.selectedCountryData = response;
 
         this.confirmedCase = this.selectedCountryData.reduce((a :Number , b) => a > b.Confirmed ? a : b.Confirmed,0);
         this.activeCase = this.selectedCountryData.reduce((a :Number , b) => a > b.Active ? a : b.Active,0);

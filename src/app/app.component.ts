@@ -13,7 +13,6 @@ export class AppComponent implements OnInit{
 
   myData : any[];
   graphData : any [];
-  casesInc : Number;
   totalActive : number;
   totalConfirm : number;
   totalRecovered : number;
@@ -22,13 +21,9 @@ export class AppComponent implements OnInit{
   constructor ( private service : DataService) { }
 
   ngOnInit(){
-    // this.service.getData()
-    // .subscribe(response => {
-    //   this.myData = response.json();
-    //   this.myData = Array(this.myData[this.myData.length-1]);
-    this.service.getStateData()
+    this.service.getData()
       .subscribe(response => {
-        this.myData = response.json();
+        this.myData = response;
         this.myData = this.myData["statewise"][0];
         this.totalActive = this.myData["active"];
         this.totalConfirm = this.myData["confirmed"];
@@ -39,11 +34,6 @@ export class AppComponent implements OnInit{
       this.serverResponse = false;
     })    
 
-    this.service.getCountryGraph()
-    .subscribe(x=>{
-      this.graphData = x.json();
-      this.casesInc = this.graphData[this.graphData.length-1].Cases - this.graphData[this.graphData.length-2].Cases;
-    })
 
   }
   

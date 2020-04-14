@@ -14,10 +14,9 @@ export class StateWiseComponent implements OnInit {
   constructor(private service : DataService) { }
 
   ngOnInit() {
-    this.service.getStateData()
+    this.service.getData()
     .subscribe(response => {
-      this.stateData = response.json();
-      this.stateData = this.stateData["statewise"];
+      this.stateData = response["statewise"];
     })
   }
 

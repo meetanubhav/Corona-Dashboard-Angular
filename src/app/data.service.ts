@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http'
+import { Http } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class DataService {
@@ -12,19 +14,16 @@ export class DataService {
   constructor(private http : Http) { }
 
   getData(){
-    return this.http.get(this.url);
+    return this.http.get(this.covid19indiaorgUrl)
+    .map((response:any) => response.json());
   }
   getCountries(){
-    return this.http.get(this.countryList);
+    return this.http.get(this.countryList)
+    .map((response:any) => response.json());
   }
   getSelectedCountryStats(value:string){
-    return this.http.get('https://api.covid19api.com/live/country/'+value+'/status/confirmed');
+    return this.http.get('https://api.covid19api.com/live/country/'+value+'/status/confirmed')
+    .map((response:any) => response.json());
   }
-  getCountryGraph(){
-    return this.http.get('https://api.covid19api.com/total/dayone/country/india/status/confirmed');
-  }
-  getStateData(){
-    return this.http.get(this.covid19indiaorgUrl);
-  }
-
+  
 }
