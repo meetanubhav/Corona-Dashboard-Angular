@@ -1,38 +1,47 @@
 <hr />
 <div class="container mt-2">
-  <h4 class="text-uppercase">See Country wise data</h4>
-  <select class="btn btn-muted dropdown-toggle" name="countryList" id="countryList" (change)='thisCountryData($event)'>
-    <option *ngFor='let country of countrylist'[value]="country.Country">{{country.Country}}</option>
-  </select>
+  <div class="form-group row">
+    <div class="col-3">
+      <label class="text-uppercase text-center" for="countryList">See Country wise data</label>
+    </div>
+    <div class="col-3">
+      <select class="form-control" name="countryList" id="countryList" (change)='thisCountryData($event)'>
+        <option value="">-- select --</option>
+        <option *ngFor="let country of countrylist" [value]="country.Country">
+          {{country.Country}}
+        </option>
+      </select>
+    </div>
+  </div>
   <div *ngIf="selectedCountryData.length == 0;then displayMessage else showContent" ></div>
   <ng-template #displayMessage>
-    <div class="alert alert-success text-uppercase mt-2" role="alert">
+    <div [className]="cssMsg" role="alert">
       {{message}}
     </div>
   </ng-template>
   <ng-template #showContent>
-    <div class="card-deck text-white text-center text-uppercase mt-2" *ngFor='let data of selectedCountryData'>
+    <div class="card-deck text-white text-center text-uppercase mt-2">
       <div class="card bg-info">
         <div class="card-body">
-          <p class="card-text">{{data?.Confirmed}}</p>
+          <p class="card-text">{{confirmedCase}}</p>
         </div>
         <div class="card-footer">Confirmed</div>
       </div>
       <div class="card bg-warning">
         <div class="card-body">
-          <p class="card-text">{{data?.Active}}</p>
+          <p class="card-text">{{activeCase}}</p>
         </div>
         <div class="card-footer">Active</div>
       </div>
       <div class="card bg-success">
         <div class="card-body">
-          <p class="card-text">{{data?.Recovered}}</p>
+          <p class="card-text">{{RecoveredCase}}</p>
         </div>
         <div class="card-footer">Recovered</div>
       </div>
       <div class="card bg-secondary">
         <div class="card-body">
-          <p class="card-text">{{data?.Deaths}}</p>
+          <p class="card-text">{{DeceasedCase}}</p>
         </div>
         <div class="card-footer">Deceased</div>
       </div>

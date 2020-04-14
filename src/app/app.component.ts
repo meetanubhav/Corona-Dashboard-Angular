@@ -12,6 +12,8 @@ import { error } from '@angular/compiler/src/util';
 export class AppComponent implements OnInit{
 
   myData : any[];
+  graphData : any [];
+  casesInc : Number;
   serverResponse : boolean = true;
   constructor ( private service : DataService) { }
 
@@ -19,10 +21,19 @@ export class AppComponent implements OnInit{
     this.service.getData()
     .subscribe(response => {
       this.myData = response.json();
+      this.myData = Array(this.myData[this.myData.length-1]);
       this.serverResponse = true;
     }, error => {
       this.serverResponse = false;
     })
+    
+
+    this.service.getCountryGraph()
+    .subscribe(x=>{
+      this.graphData = x.json();
+      this.casesInc = this.graphData[this.graphData.length-1].Cases - this.graphData[this.graphData.length-2].Cases;
+    })
+
   }
   
   _currentDT : Number = Date.now();

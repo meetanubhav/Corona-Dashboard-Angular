@@ -9,12 +9,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { CountryWiseComponent } from './country-wise/country-wise.component';
+import { FooterComponent } from './footer/footer.component';
+import { ChartJsComponent } from './chart-js/chart-js.component';
 
 @NgModule({
    declarations: [
       AppComponent,
       NavBarComponent,
-      CountryWiseComponent
+      CountryWiseComponent,
+      FooterComponent,
+      ChartJsComponent
    ],
    imports: [
       BrowserModule,

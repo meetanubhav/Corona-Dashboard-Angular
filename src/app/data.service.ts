@@ -19,5 +19,8 @@ export class DataService {
   getSelectedCountryStats(value:string){
     return this.http.get('https://api.covid19api.com/live/country/'+value+'/status/confirmed');
   }
+  getCountryGraph(){
+    return this.http.get('https://api.covid19api.com/total/dayone/country/india/status/confirmed');
+  }
 
 }
