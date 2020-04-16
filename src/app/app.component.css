@@ -5,32 +5,11 @@
 .card-text{
     font-size: 30px;
 }
-/* .text-small{
-    font-size: 20px;
-} */
-.bg-gradient-danger{
-    background: #fffbd5;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #dc3545, #e65c6a);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #dc3545, #e65c6a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+.card-body{
+    padding: 0;
 }
-.bg-gradient-info{
-    background: #fffbd5;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #007bff, #70a4db);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #007bff, #70a4db); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-}
-.bg-gradient-success{
-    background: #fffbd5;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #28a745, #41c45f);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #28a745, #41c45f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-}
-.bg-gradient-secondary{
-    background: #fffbd5;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #393d41, #6c757d);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #393d41, #6c757d); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+.text-small{
+    font-size: 15px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -46,9 +25,9 @@ background: linear-gradient(to right, #393d41, #6c757d); /* W3C, IE 10+/ Edge, F
         display: flex;
     }
     .card-footer{
-        font-size: 70%;
+        font-size: 60%;
     }
     .text-small{
-        font-size: 8px;
+        font-size: 10px;
     }
 }

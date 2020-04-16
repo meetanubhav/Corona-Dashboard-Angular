@@ -6,7 +6,7 @@
     </div>
     <div class="col-md-3 col-sm-12 col-xs-12">
       <select class="form-control" name="countryList" id="countryList" (change)='thisCountryData($event)'>
-        <option value="">-- select --</option>
+        <option value="select">-- select --</option>
         <option *ngFor="let country of countrylist" [value]="country.Country">
           {{country.Country}}
         </option>
@@ -28,7 +28,7 @@
         </div>
         <div class="card-footer">Confirmed</div>
       </div>
-      <div class="card bg-warning">
+      <div class="card bg-danger">
         <div class="card-body">
           <p class="card-text">{{activeCase}}</p>
         </div>

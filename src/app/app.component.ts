@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 // import { Data } from '@angular/router';
 import { DataService } from './data.service';
 import { error } from '@angular/compiler/src/util';
@@ -22,6 +22,7 @@ export class AppComponent implements OnInit{
   dailyConfirmed : number;
   dailyRecovered : number;
   dailyDeaths : number;
+  stateData : any[];
   serverResponse : boolean = true;
   constructor ( private service : DataService) { }
 
@@ -29,6 +30,7 @@ export class AppComponent implements OnInit{
     this.service.getData()
       .subscribe(response => {
         this.myData = response;
+        this.stateData = this.myData['statewise'];
         this.dailyData = this.myData['cases_time_series'][this.myData['cases_time_series'].length - 1];
         this.myData = this.myData["statewise"][0];
         this.totalActive = this.myData["active"];

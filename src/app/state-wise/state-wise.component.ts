@@ -1,23 +1,27 @@
 import { AppComponent } from './../app.component';
 import { DataService } from './../data.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-state-wise',
   templateUrl: './state-wise.component.html',
   styleUrls: ['./state-wise.component.css']
 })
-export class StateWiseComponent implements OnInit {
+export class StateWiseComponent {
 
-  stateData : any[];
+  @Input() stateData : any[];
+  constructor(){}
 
-  constructor(private service : DataService) { }
+  // stateData : any[];
 
-  ngOnInit() {
-    this.service.getData()
-    .subscribe(response => {
-      this.stateData = response["statewise"];
-    })
-  }
+  // constructor(private service : DataService) { }
+
+  // ngOnInit() {
+  //   this.service.getData()
+  //   .subscribe(response => {
+  //     this.stateData = response["statewise"];
+  //   })
+  // }
+  
 
 }
