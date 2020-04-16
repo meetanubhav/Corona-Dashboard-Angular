@@ -9,7 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class StateWiseComponent {
 
-  @Input() stateData : any[];
+  @Input() stateData: any[];
   constructor(){}
 
   // stateData : any[];
@@ -22,6 +22,6 @@ export class StateWiseComponent {
   //     this.stateData = response["statewise"];
   //   })
   // }
-  
+
 
 }

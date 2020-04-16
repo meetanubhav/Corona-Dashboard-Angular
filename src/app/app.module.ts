@@ -1,7 +1,7 @@
 import { DataService } from './data.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http'
+import { HttpModule } from '@angular/http';
 
 import {NgForm, FormsModule} from '@angular/forms';
 

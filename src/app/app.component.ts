@@ -49,7 +49,7 @@ export class AppComponent implements OnInit{
 
   }
   
-  _currentDT : Number = Date.now();
+  currentDT : Number = Date.now();
   // total: number = this.myData.map(x=>x.cases).reduce((a,b)=>a+b);
   total: number = 20000;
 
