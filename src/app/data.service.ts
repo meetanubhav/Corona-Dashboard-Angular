@@ -14,7 +14,7 @@ export class DataService {
 
   getData(){
     return this.http.get(this.covid19indiaorgUrl)
-    .map((response: any) => response.json());
+    .map((response: any) => response.json())
   }
   getCountries(){
     return this.http.get(this.countryList)
