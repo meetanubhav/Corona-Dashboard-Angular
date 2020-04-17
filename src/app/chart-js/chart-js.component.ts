@@ -53,15 +53,15 @@ export class ChartJsComponent implements OnInit {
       }
     ]
   });
-  
-  $.getJSON('https://api.covid19india.org/data.json', function(data) {
+
+    $.getJSON('https://api.covid19india.org/data.json', function(data) {
     $.each(data.cases_time_series, function(key, value){
       dataPoints.push({x: new Date(value.date) , y: parseInt(value.totalconfirmed)});
       recoveredDatapoint.push({x: new Date(value.date) , y: parseInt(value.totalrecovered)});
       deathsDatapoint.push({x: new Date(value.date) , y: parseInt(value.totaldeceased)});
     });
-		dpsLength = dataPoints.length;
-  chart.render();
+		  dpsLength = dataPoints.length;
+    chart.render();
   });
   }
 }

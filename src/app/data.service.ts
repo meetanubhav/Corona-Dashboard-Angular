@@ -21,7 +21,7 @@ export class DataService {
     .map((response: any) => response.json());
   }
   getSelectedCountryStats(value: string){
-    return this.http.get('https://api.covid19api.com/live/country/'+value+'/status/confirmed')
+    return this.http.get('https://api.covid19api.com/live/country/' + value + '/status/confirmed')
     .map((response: any) => response.json());
   }
 }
