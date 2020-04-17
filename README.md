@@ -6,7 +6,7 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
 
 ## Preview ( Screenshot )
-![alt text](https://meetanubhav.github.io/Corona-Dashboard-Angular/webpreview_2.jpg)
+![alt text](https://meetanubhav.github.io/Covid19App/webpreview_2.jpg)
 
 ## Motivation Behind
 
@@ -29,11 +29,11 @@ To setup the project on your local machine:
 
 1. Click on `Fork`.
 2. Go to your fork and `clone` the project to your local machine.
-3. `git clone https://github.com/meetanubhav/Corona-Dashboard-Angular.git`
+3. `git clone https://github.com/meetanubhav/Covid19App.git`
 
 To contribute to the project:
 
-1. Choose any open issue from [here](https://github.com/meetanubhav/Corona-Dashboard-Angular/issues). 
+1. Choose any open issue from [here](https://github.com/meetanubhav/Covid19App/issues). 
 2. Comment on the issue: `Can I work on this?` and get assigned.
 3. Make changes to your fork and send a PR.
 
