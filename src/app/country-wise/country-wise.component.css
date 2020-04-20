@@ -5,15 +5,15 @@
         margin-right: 2%;
     }
     .card-text{
-        font-size: 20px;
+        font-size: 12px;
     }
     .card-deck{
         display: flex;
     }
     .card-footer{
-        font-size: 60%;
+        font-size: 40%;
     }
     .text-small{
-        font-size: 8px;
+        font-size: 10px;
     }
 }

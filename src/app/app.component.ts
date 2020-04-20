@@ -23,7 +23,7 @@ export class AppComponent implements OnInit{
   dailyRecovered : number;
   dailyDeaths : number;
   stateData : any[];
-  serverResponse : boolean = true;
+  serverResponse : boolean = false;
   constructor ( private service : DataService) { }
 
   ngOnInit(){
@@ -45,6 +45,7 @@ export class AppComponent implements OnInit{
         this.serverResponse = true;
     }, error => {
       this.serverResponse = false;
+      console.log(error.status);
     })    
 
   }
