@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+/* @import '~/@angular\material\prebuilt-themes\indigo-pink.css'; */
 html,body,.row{
   margin: 0 !important;
   padding: 0 !important;
@@ -27,3 +28,5 @@ background:#252525;
 ::-webkit-scrollbar-thumb:hover {
 background: #454d55 ; 
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
