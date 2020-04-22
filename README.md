@@ -1,8 +1,5 @@
 # Covid19 India Fights Back
 
-![GitHub](https://img.shields.io/github/license/meetanubhav/Covid19App.svg)
-![GitHub issues](https://img.shields.io/github/issues-raw/meetanubhav/Covid19App.svg)
-
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
 
 ## Preview ( Screenshot )
