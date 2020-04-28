@@ -46,6 +46,7 @@ export class AppComponent implements OnInit{
     }, error => {
       this.serverResponse = false;
       console.log(error.status);
+      this.ngOnInit();
     })    
 
   }

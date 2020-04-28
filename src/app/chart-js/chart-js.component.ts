@@ -22,7 +22,7 @@ export class ChartJsComponent implements OnInit {
       theme: 'light2',
       animationEnabled: true,
       axisX: {
-        valueFormatString: 'MMM DD YYYY'
+        valueFormatString: 'MMM DD'
       },
       axisY: {
         title: 'No of Cases',
@@ -35,19 +35,25 @@ export class ChartJsComponent implements OnInit {
       },
       data: [{
         type: 'spline',
-        showInLegend: true,
         Name : 'Total Cases',
+        showInLegend: true,
+        xvalueFormatString : "MMM DD",
+        yvalueFormatString : "",
         dataPoints,
       },
       {
         type: 'spline',
         showInLegend: true,
         name: 'Recovered',
+        xvalueFormatString : "MMM DD",
+        yvalueFormatString : "",
         dataPoints : recoveredDatapoint,
       },
       {
         type: 'spline',
         showInLegend: true,
+        xvalueFormatString : "MMM DD",
+        yvalueFormatString : "",
         name: 'Deaths',
         dataPoints : deathsDatapoint,
       }

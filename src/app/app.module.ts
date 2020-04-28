@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 
-import {NgForm, FormsModule} from '@angular/forms';
+import {FormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,7 +26,12 @@ import { StateWiseComponent } from './state-wise/state-wise.component';
       BrowserModule,
       AppRoutingModule,
       FormsModule,
-      HttpModule
+      HttpModule,
+      // RouterModule.forRoot([
+      //    {path: '', component : AppComponent},
+      //    {path: 'state', component : StateWiseComponent},
+      //     {path: 'graph', component : ChartJsComponent}
+      // ])
    ],
    providers: [
       DataService,

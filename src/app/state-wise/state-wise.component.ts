@@ -1,6 +1,6 @@
 import { AppComponent } from './../app.component';
 import { DataService } from './../data.service';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-state-wise',
@@ -11,7 +11,6 @@ export class StateWiseComponent {
 
   @Input() stateData: any[];
   constructor(){}
-
   // stateData : any[];
 
   // constructor(private service : DataService) { }

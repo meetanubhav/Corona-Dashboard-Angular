@@ -7,14 +7,13 @@
   <div *ngIf='serverResponse==true; then showData else showError'></div>
   <hr />
 <span *ngIf='serverResponse==true'>
-  <!-- <div class="row">
-    <div class="col-md-6 col-sm-12 col-xs-12"> -->
+      <!-- <nav class="nav nav-pills nav-justified">
+        <a class="nav-item nav-link active" (click)="">TABULAR VIEW</a>
+        <a class="nav-item nav-link" routerLink="/graph">GRAPH VIEW</a>
+      </nav>
+  <router-outlet></router-outlet> -->
       <app-state-wise [stateData]='stateData'></app-state-wise>
       <app-chart-js></app-chart-js>
-    <!-- </div>
-    <div class="col-md-6 col-sm-12 col-xs-12"> -->
-    <!-- </div>
-  </div> -->
   <app-country-wise></app-country-wise>
 </span>
 </div>
