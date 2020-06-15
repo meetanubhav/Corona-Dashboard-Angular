@@ -1,27 +1,33 @@
 import { AppComponent } from './../app.component';
-import { DataService } from './../data.service';
-import { Component, OnInit, Input } from '@angular/core';
+import { DataService } from '../services/data.service';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-state-wise',
   templateUrl: './state-wise.component.html',
   styleUrls: ['./state-wise.component.css']
 })
-export class StateWiseComponent {
+export class StateWiseComponent implements OnChanges{
 
   @Input() stateData: any[];
-  constructor(){}
+  currentStateStats : any[];
+  selectedStateData : any[] ;
+  isSelected : boolean = false;
+  constructor( private service : DataService ){}
 
-  // stateData : any[];
+  ngOnChanges(changes: import("@angular/core").SimpleChanges): void {
+    this.service.getStateData()
+    .subscribe( response => {
+      this.currentStateStats  =  response;
+      // console.log(this.currentStateStats['Bihar']);
+    } ) 
 
-  // constructor(private service : DataService) { }
+  }
 
-  // ngOnInit() {
-  //   this.service.getData()
-  //   .subscribe(response => {
-  //     this.stateData = response["statewise"];
-  //   })
-  // }
-
+  getThisStateStats(value : string){
+    this.selectedStateData = this.currentStateStats[value]['districtData'];
+      console.log(this.selectedStateData);
+  };
+  
 
 }

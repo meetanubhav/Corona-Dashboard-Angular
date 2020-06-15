@@ -8,14 +8,14 @@
       <th>Recovered</th>
       <th>Deceased</th>
     </thead>
-    <tbody>
-      <tr *ngFor="let sd of stateData">
-        <td class="text-uppercase" *ngIf="sd.confirmed>0">{{sd.state}}</td>
-        <td class="text-primary" *ngIf="sd.confirmed>0">{{sd.confirmed}}</td>
-        <td class="text-danger" *ngIf="sd.confirmed>0">{{sd.active}}</td>
-        <td class="text-success" *ngIf="sd.confirmed>0">{{sd.recovered}}</td>
-        <td class="text-secondary" *ngIf="sd.confirmed>0">{{sd.deaths}}</td>
+    <tbody *ngFor="let sd of stateData">
+      <tr (click)="getThisStateStats(sd.state);">
+        <td class="text-uppercase showPointer"  *ngIf="sd.confirmed>0 && sd.state != 'Total'">{{sd.state}}</td>
+        <td class="text-primary" *ngIf="sd.confirmed>0 && sd.state != 'Total'">{{sd.confirmed}}</td>
+        <td class="text-danger" *ngIf="sd.confirmed>0 && sd.state != 'Total'">{{sd.active}}</td>
+        <td class="text-success" *ngIf="sd.confirmed>0 && sd.state != 'Total'">{{sd.recovered}}</td>
+        <td class="text-secondary" *ngIf="sd.confirmed>0 && sd.state != 'Total'">{{sd.deaths}}</td>
       </tr>
-    </tbody>
+ </tbody>
   </table>
 </div>

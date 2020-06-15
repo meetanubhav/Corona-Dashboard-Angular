@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 // import { Data } from '@angular/router';
-import { DataService } from './data.service';
+import { DataService } from './services/data.service';
 import { error } from '@angular/compiler/src/util';
 // import { lastCount } from './chart-js/chart-js.component';
 
@@ -52,7 +52,6 @@ export class AppComponent implements OnInit{
   
   currentDT : Number = Date.now();
   // total: number = this.myData.map(x=>x.cases).reduce((a,b)=>a+b);
-  total: number = 20000;
 
   // keyData : any = Object.keys(stateWiseData)[0];
 
