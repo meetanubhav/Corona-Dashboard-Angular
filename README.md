@@ -13,7 +13,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 This project was started as an Angular starter project during the COVID-19 panademic. 
 By seeing the crisis and situation during this panademic , It was necessary to provide a dashboard to citizens so they can know the status in a single click.
 
-## ! Disclaimer
+## Disclaimer
 
 This is not a ' Official Govermental Website ' nor the data is approved by Goverment of any organization , department, country, state, city  or district.
 Data here are collected from various sources and displayed.
