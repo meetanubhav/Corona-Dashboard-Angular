@@ -22,7 +22,9 @@ export class CountryWiseComponent implements OnInit {
 
   ngOnInit() {
     this.service.getCountries()
-    .subscribe( response => {this.countrylist = response;
+    .subscribe( response => 
+      {
+        this.countrylist = response..sort((n1,n2)=> n1.Country > n2.Country);;
       },
       error => {
         this.cssMsg = 'spinner-border';
